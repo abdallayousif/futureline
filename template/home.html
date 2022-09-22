@@ -1,0 +1,44 @@
+{% extends "./base.html" %}
+{% load static %}
+{ block title }FuturLineCounter{ endblock  }
+{% block contant %}
+
+
+<main >
+    <div class='overlay'>
+      <h1 class='future__heading'>Future Line Academy Work Shop Counter</h1>
+      <span class='future__counter' >{% if invite %}{{ invite|length }}{% else %} 0
+    {% endif %}</span>
+      <div style="padding: 33px;">
+        <a class='LoginSinup' href="{% url 'account:Invition' %}" >Add Person</a>
+        <a  class='LoginSinup' href="{% url 'account:SinUp' %}">Sin Up</a>
+      </div>
+      <table class=" table-dark table-striped dir" style="width: 65%;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"> الاسم بالكامل </th>
+            <th scope="col"> مدعو بواسطة  </th>
+            <th scope="col">رقم الهاتف </th>
+          </tr>
+        </thead>
+        {% for i in invite %}
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ i.full_name }}</td>
+            <td>{{ i.create.full_name }}</td>
+            <td>{{ i.create.phone }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      
+    </div>
+   
+  </main>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'sans-serif';
+}
+.dir{
+    direction: rtl;
+}
+
+main {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    background-image: url('../static/logo.png');
+    background-size: cover;
+    --webkit--background-size:cover;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 28, 28, 0.86);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.future__heading
+{
+      color: rgb(204, 168, 26);
+}
+
+.future__counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 255, 85);
+    font-size: 50px;
+
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    border: 5px solid rgb(255, 175, 3);
+    border-radius: 50%;
+}
+.LoginSinup  {
+    padding: 15px;
+    margin-right: 5px;
+    background: #002383;
+    color: #ffffff;
+    border: none;
+    border-radius:10px;
+    text-decoration: none;
+}
+.Table{
+    padding: 10px;
+}
+.Table table, th, td{
+    border:1px solid rgb(130, 5, 248);
+    padding: 5px;
+    color: rgb(0, 255, 85);
+}
+@media screen and (max-width: 590px) {
+    .future__heading{
+        font-size: 22px;
+    } 
+}

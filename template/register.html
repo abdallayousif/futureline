@@ -1,0 +1,52 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Registration{% endblock  %}
+{% block contant %} 
+ <!-- Login Start -->
+  <div class="container-fluid">
+      <div class="row no-gutter">
+          <div class="col-md-12">
+              <div class="login d-flex align-item-center py-5">
+                  <div class="container dir">
+                      <div class="row">
+                          <div class="col-12 col-lg-7 mx-auto">
+                              <form class="account-form p-4 rounded col-lg-10 mx-auto" action="." method="post">
+                                  {% csrf_token %}
+                                  <h3 class="mb-2 font-weight-bold"> انشاء حساب</h3>
+                                  <p class="mb-4">حساب مجاني ولن ياخذ زمن</p>
+
+                                  {% if form.errors %}
+                                  <p>من فضلك صحح هذا الخطاء</p>
+                                  {% for field in form %}
+                                  {% if field.errors %}
+                                  <div class="alert alert-primary" role="alert">
+                                      {{ field.label }}: {{ field.errors|striptags}}
+                                  </div>
+                                  {% endif %}
+                                  {% endfor %}
+                                  {% endif %}
+
+                                  <label ><span class="text-muted small">(مطلوب)</span>{{ form.user_name.label }}</label>
+                                  {{ form.user_name }}
+                                  <label ><span class="text-muted small">(مطلوب)</span>{{ form.email.label }}</label>
+                                  {{ form.email }}
+                                  <label> <span class="text-muted small">(مطلوب)</span>{{ form.password.label }}</label>
+                                  {{ form.password }}
+                                  <label > <span class="text-muted small">(مطلوب)</span>{{ form.password2.label }}</label>
+                                  {{ form.password2 }}
+                                  <label ><span class="text-muted small">(مطلوب)</span>{{ form.first_name.label }}</label>
+                                  {{ form.first_name }}
+                                  <label ><span class="text-muted small">(مطلوب)</span>{{ form.phone_number.label }}</label>
+                                  {{ form.phone_number }}
+                                  <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">انشاء</button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+<!-- Login End -->
+
+{% endblock  %} 
